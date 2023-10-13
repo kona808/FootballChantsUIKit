@@ -33,6 +33,9 @@
 		FF5FAF1D2AD9B5DF00523CFD /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FAF092AD9B5DF00523CFD /* Teams.swift */; };
 		FF5FAF1F2AD9B60200523CFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF5FAF1E2AD9B60200523CFD /* Assets.xcassets */; };
 		FF5FAF222AD9D52200523CFD /* ChantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FAF212AD9D52200523CFD /* ChantsViewController.swift */; };
+		FF5FAF252AD9EEBE00523CFD /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FAF242AD9EEBE00523CFD /* Team.swift */; };
+		FF5FAF272AD9EF4A00523CFD /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FAF262AD9EF4A00523CFD /* Manager.swift */; };
+		FF5FAF2A2AD9EFFD00523CFD /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FAF292AD9EFFD00523CFD /* TeamsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		FF5FAF092AD9B5DF00523CFD /* Teams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
 		FF5FAF1E2AD9B60200523CFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF5FAF212AD9D52200523CFD /* ChantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChantsViewController.swift; sourceTree = "<group>"; };
+		FF5FAF242AD9EEBE00523CFD /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		FF5FAF262AD9EF4A00523CFD /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		FF5FAF292AD9EFFD00523CFD /* TeamsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,8 @@
 		FF5FAEDF2AD8A3CC00523CFD /* Football Chants */ = {
 			isa = PBXGroup;
 			children = (
+				FF5FAF282AD9EFFD00523CFD /* ViewModel */,
+				FF5FAF232AD9EEA700523CFD /* Model */,
 				FF5FAF202AD9D4D200523CFD /* ViewController */,
 				FF5FAEF42AD9B5DF00523CFD /* Teams&Chants */,
 				FF5FAEE02AD8A3CC00523CFD /* AppDelegate.swift */,
@@ -149,6 +157,23 @@
 				FF5FAF212AD9D52200523CFD /* ChantsViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FF5FAF232AD9EEA700523CFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF5FAF242AD9EEBE00523CFD /* Team.swift */,
+				FF5FAF262AD9EF4A00523CFD /* Manager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF5FAF282AD9EFFD00523CFD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF5FAF292AD9EFFD00523CFD /* TeamsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,8 +267,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF5FAF222AD9D52200523CFD /* ChantsViewController.swift in Sources */,
+				FF5FAF2A2AD9EFFD00523CFD /* TeamsViewModel.swift in Sources */,
+				FF5FAF272AD9EF4A00523CFD /* Manager.swift in Sources */,
 				FF5FAF1D2AD9B5DF00523CFD /* Teams.swift in Sources */,
 				FF5FAEE12AD8A3CC00523CFD /* AppDelegate.swift in Sources */,
+				FF5FAF252AD9EEBE00523CFD /* Team.swift in Sources */,
 				FF5FAEE32AD8A3CC00523CFD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
