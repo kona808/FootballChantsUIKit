@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FF5FAEE12AD8A3CC00523CFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FAEE02AD8A3CC00523CFD /* AppDelegate.swift */; };
 		FF5FAEE32AD8A3CC00523CFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FAEE22AD8A3CC00523CFD /* SceneDelegate.swift */; };
-		FF5FAEE52AD8A3CC00523CFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FAEE42AD8A3CC00523CFD /* ViewController.swift */; };
 		FF5FAEE82AD8A3CC00523CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5FAEE62AD8A3CC00523CFD /* Main.storyboard */; };
 		FF5FAEED2AD8A3CD00523CFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5FAEEB2AD8A3CD00523CFD /* LaunchScreen.storyboard */; };
 		FF5FAF0A2AD9B5DF00523CFD /* burnley.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF5FAEF62AD9B5DF00523CFD /* burnley.mp3 */; };
@@ -33,13 +32,13 @@
 		FF5FAF1C2AD9B5DF00523CFD /* everton.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF5FAF082AD9B5DF00523CFD /* everton.mp3 */; };
 		FF5FAF1D2AD9B5DF00523CFD /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FAF092AD9B5DF00523CFD /* Teams.swift */; };
 		FF5FAF1F2AD9B60200523CFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF5FAF1E2AD9B60200523CFD /* Assets.xcassets */; };
+		FF5FAF222AD9D52200523CFD /* ChantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FAF212AD9D52200523CFD /* ChantsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FF5FAEDD2AD8A3CC00523CFD /* Football Chants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Football Chants.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5FAEE02AD8A3CC00523CFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF5FAEE22AD8A3CC00523CFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FF5FAEE42AD8A3CC00523CFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF5FAEE72AD8A3CC00523CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF5FAEEC2AD8A3CD00523CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF5FAEEE2AD8A3CD00523CFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		FF5FAF082AD9B5DF00523CFD /* everton.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = everton.mp3; sourceTree = "<group>"; };
 		FF5FAF092AD9B5DF00523CFD /* Teams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
 		FF5FAF1E2AD9B60200523CFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF5FAF212AD9D52200523CFD /* ChantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChantsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +96,10 @@
 		FF5FAEDF2AD8A3CC00523CFD /* Football Chants */ = {
 			isa = PBXGroup;
 			children = (
+				FF5FAF202AD9D4D200523CFD /* ViewController */,
 				FF5FAEF42AD9B5DF00523CFD /* Teams&Chants */,
 				FF5FAEE02AD8A3CC00523CFD /* AppDelegate.swift */,
 				FF5FAEE22AD8A3CC00523CFD /* SceneDelegate.swift */,
-				FF5FAEE42AD8A3CC00523CFD /* ViewController.swift */,
 				FF5FAF1E2AD9B60200523CFD /* Assets.xcassets */,
 				FF5FAEE62AD8A3CC00523CFD /* Main.storyboard */,
 				FF5FAEEB2AD8A3CD00523CFD /* LaunchScreen.storyboard */,
@@ -141,6 +141,14 @@
 				FF5FAF082AD9B5DF00523CFD /* everton.mp3 */,
 			);
 			path = Chants;
+			sourceTree = "<group>";
+		};
+		FF5FAF202AD9D4D200523CFD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FF5FAF212AD9D52200523CFD /* ChantsViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,8 +241,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF5FAF222AD9D52200523CFD /* ChantsViewController.swift in Sources */,
 				FF5FAF1D2AD9B5DF00523CFD /* Teams.swift in Sources */,
-				FF5FAEE52AD8A3CC00523CFD /* ViewController.swift in Sources */,
 				FF5FAEE12AD8A3CC00523CFD /* AppDelegate.swift in Sources */,
 				FF5FAEE32AD8A3CC00523CFD /* SceneDelegate.swift in Sources */,
 			);
