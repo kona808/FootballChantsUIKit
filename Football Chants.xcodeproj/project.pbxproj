@@ -36,6 +36,7 @@
 		FF5FAF252AD9EEBE00523CFD /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FAF242AD9EEBE00523CFD /* Team.swift */; };
 		FF5FAF272AD9EF4A00523CFD /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FAF262AD9EF4A00523CFD /* Manager.swift */; };
 		FF5FAF2A2AD9EFFD00523CFD /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FAF292AD9EFFD00523CFD /* TeamsViewModel.swift */; };
+		FF5FAF2D2ADC2DE500523CFD /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FAF2C2ADC2DE500523CFD /* TeamTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		FF5FAF242AD9EEBE00523CFD /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		FF5FAF262AD9EF4A00523CFD /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		FF5FAF292AD9EFFD00523CFD /* TeamsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
+		FF5FAF2C2ADC2DE500523CFD /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		FF5FAEDF2AD8A3CC00523CFD /* Football Chants */ = {
 			isa = PBXGroup;
 			children = (
+				FF5FAF2B2AD9F3DB00523CFD /* Views */,
 				FF5FAF282AD9EFFD00523CFD /* ViewModel */,
 				FF5FAF232AD9EEA700523CFD /* Model */,
 				FF5FAF202AD9D4D200523CFD /* ViewController */,
@@ -174,6 +177,14 @@
 				FF5FAF292AD9EFFD00523CFD /* TeamsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF5FAF2B2AD9F3DB00523CFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF5FAF2C2ADC2DE500523CFD /* TeamTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +281,7 @@
 				FF5FAF2A2AD9EFFD00523CFD /* TeamsViewModel.swift in Sources */,
 				FF5FAF272AD9EF4A00523CFD /* Manager.swift in Sources */,
 				FF5FAF1D2AD9B5DF00523CFD /* Teams.swift in Sources */,
+				FF5FAF2D2ADC2DE500523CFD /* TeamTableViewCell.swift in Sources */,
 				FF5FAEE12AD8A3CC00523CFD /* AppDelegate.swift in Sources */,
 				FF5FAF252AD9EEBE00523CFD /* Team.swift in Sources */,
 				FF5FAEE32AD8A3CC00523CFD /* SceneDelegate.swift in Sources */,
@@ -424,7 +436,6 @@
 				INFOPLIST_FILE = "Football Chants/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -456,7 +467,6 @@
 				INFOPLIST_FILE = "Football Chants/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
