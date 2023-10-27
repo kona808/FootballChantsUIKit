@@ -40,7 +40,11 @@ private extension ChantsViewController {
     
     func setup() {
         
-        tableVw.dataSource = self
+        self.navigationController?.navigationBar.topItem?.title = "Football Chants"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        
+        tableVw.dataSource = selfz
         
         self.view.addSubview(tableVw)
         
