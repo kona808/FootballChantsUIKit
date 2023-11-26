@@ -23,6 +23,7 @@ class ChantsViewController: UIViewController {
     }()
     
     private lazy var teamsViewModel = TeamsViewModel()
+    private lazy var audioManagerViewModel = AudioManagerViewModel()
     
     // MARK: - Lifecycle
     // USING loadView IS MORE EFFICIENT TO CALL OR ANY UI STUFF IN THE LOADVIEW FUNCTION COMPARED TO VIEWDIDLOAD IN TERMS OF AUTOLAYERING AND ETC..
@@ -87,8 +88,9 @@ extension ChantsViewController: UITableViewDataSource {
 
 extension ChantsViewController: TeamTableViewCellDelegate {
     func didTapPlayback(for team: Team) {
+        audioManagerViewModel.playback(team)
         teamsViewModel.togglePlayback(for: team)
         tableVw.reloadData()
-        print("The item that was selected: \(team.name)")
+//        print("The item that was selected: \(team.name)")
     }
 }
