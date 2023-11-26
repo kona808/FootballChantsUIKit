@@ -7,8 +7,12 @@
 
 import UIKit
 
-class TeamTableViewCell: UITableViewCell {
+protocol TeamTableViewCellDelegate: class {
+    func didTapPlayback(for team: Team)
+}
 
+class TeamTableViewCell: UITableViewCell {
+    
     static let cellID = "TeamTableViewCell"
     
     // MARK: - UI
@@ -29,14 +33,14 @@ class TeamTableViewCell: UITableViewCell {
     }()
     
     private lazy var badgeImgView: UIImageView = {
-       let imageView = UIImageView()
+        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
     private lazy var playbackButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.tintColor = .white
         return button
@@ -50,7 +54,7 @@ class TeamTableViewCell: UITableViewCell {
         label.textColor = .white
         return label
     }()
-
+    
     private lazy var foundedLabel:  UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -78,22 +82,40 @@ class TeamTableViewCell: UITableViewCell {
         return label
     }()
     
+    
+    private weak var delegate: TeamTableViewCellDelegate?
+    private var team: Team?
+    
     // MARK: - Lifecycle
     override func layoutSubviews() {
         super.layoutSubviews()
         containerView.layer.cornerRadius = 10
     }
     
-    func configure() {
-        containerView.backgroundColor = TeamType.arsenal.background
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.team = nil
+        self.delegate = nil
+        self.contentView.subviews.forEach { $0.removeFromSuperview() }
+    }
+    
+    func configure(with item: Team, delegate: TeamTableViewCellDelegate ) {
         
-        badgeImgView.image = TeamType.arsenal.badge
-        playbackButton.setImage(UIImage(systemName: "play.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 32)), for: .normal)
+        self.team = item
+        self.delegate = delegate
         
-        nameLabel.text = "Arsenal"
-        foundedLabel.text = "1800"
-        jobLabel.text = "Current Manager: Mikel Arteta"
-        infoLabel.text = "jaksbdkjsabdb"
+        playbackButton.addTarget(self, action: #selector(didTapPlayback), for: .touchUpInside)
+        
+        containerView.backgroundColor = item.id.background
+        
+        badgeImgView.image = item.id.badge
+        //TERNARY OPPERATOR over IF STATEMENT
+        playbackButton.setImage(item.isPlaying ? Assets.pause : Assets.play, for: .normal)
+        
+        nameLabel.text = item.name
+        foundedLabel.text = item.founded
+        jobLabel.text = "Current \(item.manager.job.rawValue): \(item.manager.name)"
+        infoLabel.text = item.info
         
         self.contentView.addSubview(containerView)
         
@@ -106,7 +128,7 @@ class TeamTableViewCell: UITableViewCell {
         contentStackView.addArrangedSubview(foundedLabel)
         contentStackView.addArrangedSubview(jobLabel)
         contentStackView.addArrangedSubview(infoLabel)
-            
+        
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8),
             containerView.bottomAnchor.constraint(equalTo:self.contentView.bottomAnchor, constant: -8),
@@ -129,4 +151,11 @@ class TeamTableViewCell: UITableViewCell {
             playbackButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
         ])
     }
+    @objc func didTapPlayback() {
+//        print("The team that is selected:L \(team?.name)")
+        if let team = team {
+            delegate?.didTapPlayback(for: team)
+        }
+    }
+    
 }

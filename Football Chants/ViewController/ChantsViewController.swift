@@ -22,6 +22,8 @@ class ChantsViewController: UIViewController {
         return tv
     }()
     
+    private lazy var teamsViewModel = TeamsViewModel()
+    
     // MARK: - Lifecycle
     // USING loadView IS MORE EFFICIENT TO CALL OR ANY UI STUFF IN THE LOADVIEW FUNCTION COMPARED TO VIEWDIDLOAD IN TERMS OF AUTOLAYERING AND ETC..
     override func loadView() {
@@ -32,7 +34,7 @@ class ChantsViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = .systemBlue
+        self.view.backgroundColor = .white
     }
 }
 // ADDS THE TABLEVIEW ONTO THE SCREEN
@@ -44,7 +46,7 @@ private extension ChantsViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         
-        tableVw.dataSource = selfz
+        tableVw.dataSource = self
         
         self.view.addSubview(tableVw)
         
@@ -57,17 +59,18 @@ private extension ChantsViewController {
         ])
     }
 }
-// MARK: - UITableViewDataSource
+        // MARK: - UITableViewDataSource
 extension ChantsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return teamsViewModel.teams.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let team = teamsViewModel.teams[indexPath.row]
         // this V "tableVw" couldn't be called tableView because it took the one for the "tableView" label above.
         let cell = tableVw.dequeueReusableCell(withIdentifier: TeamTableViewCell.cellID, for: indexPath) as! TeamTableViewCell
         
-        cell.configure()
+        cell.configure(with: team, delegate: self)
 //        switch indexPath.row {
 //        case 0:
 //            cell.backgroundColor = .systemTeal
@@ -79,5 +82,13 @@ extension ChantsViewController: UITableViewDataSource {
 //            break
 //        }
         return cell
+    }
+}
+
+extension ChantsViewController: TeamTableViewCellDelegate {
+    func didTapPlayback(for team: Team) {
+        teamsViewModel.togglePlayback(for: team)
+        tableVw.reloadData()
+        print("The item that was selected: \(team.name)")
     }
 }
